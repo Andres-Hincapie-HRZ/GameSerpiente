@@ -1,0 +1,306 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #0a0a0a, #1a1a1a);
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    overflow: hidden;
+}
+
+#juego {
+    border: 3px solid #00ffff;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.7), 
+                0 0 60px rgba(0, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#puntuacion {
+    font-size: 28px;
+    margin: 20px 0;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#nivel {
+    font-size: 24px;
+    margin: 10px 0;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#inicio {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    z-index: 10;
+    animation: pulsar 2s infinite;
+}
+
+@keyframes pulsar {
+    0% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); }
+    50% { box-shadow: 0 0 40px rgba(0, 255, 255, 0.8); }
+    100% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); }
+}
+
+button {
+    background: linear-gradient(45deg, #00ffff, #00cccc);
+    border: none;
+    padding: 12px 25px;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    margin: 5px;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #00cccc, #00ffff);
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+}
+
+h1 {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+#controles {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#pausa {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 5;
+}
+
+#opciones {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+}
+
+#panel-opciones {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    z-index: 15;
+    display: none;
+    max-height: 80vh;
+    overflow-y: auto;
+    min-width: 300px;
+}
+
+.panel-botones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modo-titulo {
+    color: #00ffff;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 24px;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.tiempo-extra {
+    position: absolute;
+    color: #00ff00;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #00ff00;
+    animation: flotar-arriba 1s forwards;
+    z-index: 1000;
+}
+
+@keyframes flotar-arriba {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-30px); opacity: 0; }
+}
+
+.opcion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 5px;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.personaje-seleccion {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.personaje-option {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #00ffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-size: cover;
+    background-position: center;
+}
+
+.personaje-option:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+.personaje-option.seleccionado {
+    border-color: #ff0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+}
+
+.modo-juego {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.modo-option {
+    padding: 10px;
+    border: 1px solid #00ffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modo-option:hover {
+    background: rgba(0, 255, 255, 0.2);
+}
+
+.modo-option.seleccionado {
+    background: rgba(0, 255, 255, 0.4);
+    border-color: #ff0000;
+}
+
+#enemigos {
+    position: absolute;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.enemigo {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff0000;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ff0000;
+}
+
+#efecto-comida {
+    position: absolute;
+    pointer-events: none;
+    z-index: 4;
+    display: none;
+}
+
+#mensaje-nivel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    z-index: 6;
+    display: none;
+    animation: aparecer-desvanecer 2s forwards;
+}
+
+@keyframes aparecer-desvanecer {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
+}
+
+#musica-control {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #00ffff;
+}
+
+#musica-control button {
+    margin: 0;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.explosion {
+    position: absolute;
+    pointer-events: none;
+    z-index: 4;
+    animation: explotar 0.5s forwards;
+}
+
+@keyframes explotar {
+    0% { transform: scale(0.5); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+.bomba {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff6600;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #ff6600;
+    animation: pulsar-bomba 1s infinite;
+}
+
+@keyframes pulsar-bomba {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}

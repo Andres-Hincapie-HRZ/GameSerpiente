@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de la Serpiente Épico</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div id="puntuacion">Puntuación: 0</div>
+    <div id="nivel">Nivel: 1</div>
+    <canvas id="juego" width="600" height="400"></canvas>
+    <button id="pausa" onclick="alternarPausa()">Pausar</button>
+    <button id="opciones" onclick="mostrarOpciones()">Opciones</button>
+    <div id="panel-opciones">
+        <h2 class="modo-titulo">Selecciona el Modo de Juego</h2>
+        <div class="opcion">
+            <label for="volumen">Volumen efectos:</label>
+            <input type="range" id="volumen" min="0" max="100" value="50">
+        </div>
+        <div class="opcion">
+            <label for="velocidad-inicial">Velocidad inicial:</label>
+            <input type="range" id="velocidad-inicial" min="50" max="200" value="150">
+        </div>
+        <div class="opcion">
+            <label for="efectos">Efectos visuales:</label>
+            <input type="checkbox" id="efectos" checked>
+        </div>
+        <h3>Personaje</h3>
+        <div class="personaje-seleccion">
+            <div class="personaje-option seleccionado" style="background-color: #00ff00;" data-color="#00ff00"></div>
+            <div class="personaje-option" style="background-color: #ff00ff;" data-color="#ff00ff"></div>
+            <div class="personaje-option" style="background-color: #00ffff;" data-color="#00ffff"></div>
+            <div class="personaje-option" style="background-color: #ffff00;" data-color="#ffff00"></div>
+        </div>
+        <h3>Modo de Juego</h3>
+        <div class="modo-juego">
+            <div class="modo-option seleccionado" data-modo="clasico">Clásico</div>
+            <div class="modo-option" data-modo="enemigos">Con Enemigos</div>
+            <div class="modo-option" data-modo="supervivencia">Supervivencia</div>
+            <div class="modo-option" data-modo="tiempo">Contra el Tiempo</div>
+        </div>
+        <div class="panel-botones">
+            <button onclick="iniciarJuegoDesdeOpciones()">¡Jugar!</button>
+        </div>
+    </div>
+    <div id="efecto-comida"></div>
+    <div id="mensaje-nivel"></div>
+    <div id="musica-control">
+        <button id="toggle-musica" onclick="alternarMusica()">🔊 Música</button>
+    </div>
+    <div id="inicio">
+        <h1>¡Juego de la Serpiente!</h1>
+        <p>Usa las flechas del teclado para mover la serpiente</p>
+        <p>Presiona ESPACIO para iniciar/reiniciar</p>
+        <p>Presiona P para pausar</p>
+        <p>Presiona M para silenciar/activar música</p>
+        <button onclick="iniciarJuego()">¡Jugar!</button>
+    </div>
+
+    <script src="code.js"></script>
+</body>
+</html>
