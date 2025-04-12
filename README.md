@@ -4,6 +4,9 @@ Un juego clásico de la serpiente con múltiples modos de juego y efectos visual
 
 ![image](https://github.com/user-attachments/assets/21256a50-f055-4ad3-97f4-601751275b40)
 
+![image](https://github.com/user-attachments/assets/0e60d742-b30e-4c5a-8a1f-c36bd1307066)
+
+
 ## 🎮 Características
 
 - **Múltiples Modos de Juego:**
